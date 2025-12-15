@@ -1,0 +1,49 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    restart: unless-stopped
+    environment:
+      PORT: "4000"
+      NODE_ENV: "development"
+      CORS_ORIGIN: "http://localhost:5173"
+      MONGODB_URI: "mongodb://mongo:27017/counter_app"
+      # Helps file watching on Windows bind mounts
+      CHOKIDAR_USEPOLLING: "true"
+    depends_on:
+      - mongo
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    restart: unless-stopped
+    environment:
+      # IMPORTANT: keep empty so the browser calls same-origin (/api via Vite proxy)
+      VITE_API_BASE_URL: ""
+      VITE_DEV_PROXY_TARGET: "http://api:4000"
+      CHOKIDAR_USEPOLLING: "true"
+    depends_on:
+      - api
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  mongo_data:

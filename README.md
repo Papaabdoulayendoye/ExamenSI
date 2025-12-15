@@ -20,12 +20,23 @@ Base URL : `http://localhost:4000`
 
 ## Build & Run (Docker) — recommandé
 Depuis la racine du dépôt :
-- Build + démarrage de tous les services :
+- Build + démarrage de tous les services (mode "prod") :
   - `docker compose up --build`
 
 Accès :
 - Frontend : `http://localhost:8080`
 - API health : `http://localhost:4000/api/health`
+
+## Développement avec Docker Compose (hot reload)
+Objectif : en modifiant le code local, les conteneurs se rechargent automatiquement.
+
+Depuis la racine du dépôt :
+- Lancer le mode dev (Vite + ts-node-dev + volumes) :
+  - `docker compose -f compose.dev.yaml up --build`
+
+Accès :
+- Frontend (Vite dev server) : `http://localhost:5173`
+- API : `http://localhost:4000/api/health`
 
 ## Build & Run (Développement local)
 ### 1) Démarrer MongoDB (le plus simple)
