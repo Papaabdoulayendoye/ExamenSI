@@ -1,54 +1,54 @@
-# ExamenSI — Counter Web App (React + Express + MongoDB)
-A minimal full-stack web app for the exam: a counter (countdown) with **increment (+)** and **decrement (-)** persisted in a database.
+# ExamenSI — Application Compteur (React + Express + MongoDB)
+Application full‑stack minimale pour l’examen : un **compteur / compte à rebours** avec **incrément (+)** et **décrément (-)**, dont la valeur est **persistée en base de données**.
 
-## Project structure
-- `frontend/`: React + TypeScript (Vite)
-- `backend/`: Express + TypeScript API (MongoDB + Mongoose)
-- `compose.yaml`: Docker Compose stack (MongoDB + API + web)
+## Structure du projet
+- `frontend/` : React + TypeScript (Vite)
+- `backend/` : API Express + TypeScript (MongoDB + Mongoose)
+- `compose.yaml` : stack Docker Compose (MongoDB + API + web)
 
-## Features
-- Counter UI with **+ / - / Reset**
-- Counter value stored in **MongoDB**
+## Fonctionnalités
+- UI compteur avec **+ / - / Reset**
+- Valeur persistée dans **MongoDB**
 
 ## API
-Base URL: `http://localhost:4000`
+Base URL : `http://localhost:4000`
 - `GET /api/health`
 - `GET /api/counter` → `{ "value": number }`
 - `POST /api/counter/increment` → `{ "value": number }`
 - `POST /api/counter/decrement` → `{ "value": number }`
 - `POST /api/counter/reset` → `{ "value": number }`
 
-## Build & Run (Docker) — recommended
-From the repo root:
-- Build and start everything:
+## Build & Run (Docker) — recommandé
+Depuis la racine du dépôt :
+- Build + démarrage de tous les services :
   - `docker compose up --build`
 
-Open:
-- Frontend: `http://localhost:8080`
-- API health: `http://localhost:4000/api/health`
+Accès :
+- Frontend : `http://localhost:8080`
+- API health : `http://localhost:4000/api/health`
 
-## Build & Run (Local development)
-### 1) Start MongoDB (quickest)
-From the repo root:
+## Build & Run (Développement local)
+### 1) Démarrer MongoDB (le plus simple)
+Depuis la racine :
 - `docker compose up mongo`
 
 ### 2) Backend
-1. Create env file:
+1. Créer le fichier `.env` :
    - `copy backend\.env.example backend\.env`
-2. Install & run:
+2. Installer & lancer :
    - `cd backend`
    - `npm.cmd install`
    - `npm.cmd run dev`
 
 ### 3) Frontend
-1. Create env file:
+1. Créer le fichier `.env` :
    - `copy frontend\.env.example frontend\.env`
-2. Install & run:
+2. Installer & lancer :
    - `cd frontend`
    - `npm.cmd install`
    - `npm.cmd run dev`
 
-## Comments
-- On some Windows/PowerShell setups, `npm` may be blocked by execution policies. Use `npm.cmd`.
-- In Docker, the frontend is served by Nginx and the backend runs as a non-root user.
-- MongoDB data is stored in a named Docker volume (`mongo_data`).
+## Commentaires
+- Sur Windows/PowerShell, `npm` peut être bloqué (ExecutionPolicy). Utiliser `npm.cmd`.
+- En Docker : le frontend est servi par Nginx, et le backend tourne en non‑root.
+- Les données MongoDB sont stockées dans un volume Docker nommé (`mongo_data`).
