@@ -45,7 +45,7 @@ Accès :
 Depuis la racine :
 - `docker compose up mongo`
 
-### 2) Backend
+### 2) Backend `https://hub.docker.com/repository/docker/papaabdoulaye/examensi-api/general`
 1. Créer le fichier `.env` :
    - `copy backend\.env.example backend\.env`
 2. Installer & lancer :
@@ -53,7 +53,7 @@ Depuis la racine :
    - `npm install`
    - `npm run dev`
 
-### 3) Frontend
+### 3) Frontend `https://hub.docker.com/repository/docker/papaabdoulaye/examensi-web/general`
 1. Créer le fichier `.env` :
    - `copy frontend\.env.example frontend\.env`
 2. Installer & lancer :
@@ -61,9 +61,17 @@ Depuis la racine :
    - `npm  install`
    - `npm run dev`
 
-## Sécurité (Trivy)
-- Un scan Trivy a été réalisé sur les images Docker et les rapports sont dans `reports/`.
-- Voir le fichier `SECURITY_REPORT.md`.
+## Sécurité (Scout + Docker Hub)
+- Un scan Trivy a été réalisé sur les images Docker ans
+  - `https://scout.docker.com/reports/org/papaabdoulaye/overview?stream=latest-indexed` (ExamenSI-web / Front)
+    - *Le niveau de gravité « moyen » indique une vulnérabilité dont l'impact potentiel est modéré si elle est exploitée.*   
+  - `https://scout.docker.com/vulnerabilities/id/CVE-2025-64756/my-images/org/papaabdoulaye?stream=latest-indexed` (ExamenSI-api / Back)
+    -  *Avec le niveau de gravité « HIGH 7.5 (	CVE-2025-64756 )» 
+    - Les pirates disposant d'un accès local ou d'un compte 
+    - CI pourraient exploiter cette vulnérabilité pour exécuter 
+    - des commandes arbitraires avec les privilèges de l'utilisateur 
+    - actuel. Cela pourrait entraîner une compromission totale du système, 
+    - notamment : - Accès non autorisé à des ressources système sensibles*
 
 ## Commentaires
 - En Docker : le frontend est servi par Nginx, et le backend tourne en non‑root.
