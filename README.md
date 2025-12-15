@@ -62,7 +62,7 @@ Depuis la racine :
    - `npm run dev`
 
 ## Sécurité (Scout + Docker Hub)
-- Un scan Scout a été réalisé sur les images Docker sur le hub docker
+- Un scan Scout a été réalisé sur les images Docker sur le hub docker les lien ci-dessous sont les captures faite a paritr des resultats obtenues puis que le hub docker on est limité a 1 scan pour une images et pour en beneficier plus il faut être en mode PRO PLAN 
   - `https://ibb.co/350TSKg1` (ExamenSI-web / Front)
     - *Le niveau de gravité « moyen » indique une vulnérabilité dont l'impact potentiel est modéré si elle est exploitée.*   
   - `https://ibb.co/JF82sNv2` (ExamenSI-api / Back)
