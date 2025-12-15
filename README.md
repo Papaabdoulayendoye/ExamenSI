@@ -1,3 +1,5 @@
+# **NDOYE PAPA ABDOULAYE**
+
 # ExamenSI — Application Compteur (React + Express + MongoDB)
 Application full‑stack minimale pour l’examen : un **compteur / compte à rebours** avec **incrément (+)** et **décrément (-)**, dont la valeur est **persistée en base de données**.
 
@@ -18,7 +20,7 @@ Base URL : `http://localhost:4000`
 - `POST /api/counter/decrement` → `{ "value": number }`
 - `POST /api/counter/reset` → `{ "value": number }`
 
-## Build & Run (Docker) — recommandé
+## Build & Run (Docker)
 Depuis la racine du dépôt :
 - Build + démarrage de tous les services (mode "prod") :
   - `docker compose up --build`
@@ -31,7 +33,7 @@ Accès :
 Objectif : en modifiant le code local, les conteneurs se rechargent automatiquement.
 
 Depuis la racine du dépôt :
-- Lancer le mode dev (Vite + ts-node-dev + volumes) :
+- Lancer le mode dev :
   - `docker compose -f compose.dev.yaml up --build`
 
 Accès :
@@ -48,22 +50,21 @@ Depuis la racine :
    - `copy backend\.env.example backend\.env`
 2. Installer & lancer :
    - `cd backend`
-   - `npm.cmd install`
-   - `npm.cmd run dev`
+   - `npm install`
+   - `npm run dev`
 
 ### 3) Frontend
 1. Créer le fichier `.env` :
    - `copy frontend\.env.example frontend\.env`
 2. Installer & lancer :
    - `cd frontend`
-   - `npm.cmd install`
-   - `npm.cmd run dev`
+   - `npm  install`
+   - `npm run dev`
 
 ## Sécurité (Trivy)
 - Un scan Trivy a été réalisé sur les images Docker et les rapports sont dans `reports/`.
 - Voir le fichier `SECURITY_REPORT.md`.
 
 ## Commentaires
-- Sur Windows/PowerShell, `npm` peut être bloqué (ExecutionPolicy). Utiliser `npm.cmd`.
 - En Docker : le frontend est servi par Nginx, et le backend tourne en non‑root.
 - Les données MongoDB sont stockées dans un volume Docker nommé (`mongo_data`).

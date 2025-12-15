@@ -1,5 +1,3 @@
-# syntax=docker/dockerfile:1
-
 FROM node:22-alpine AS build
 WORKDIR /app
 
@@ -8,7 +6,6 @@ RUN npm ci
 
 COPY . .
 
-# Vite env vars are baked at build-time
 ARG VITE_API_BASE_URL
 ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 

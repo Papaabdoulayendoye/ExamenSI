@@ -47,12 +47,10 @@ function App() {
   };
 
   return (
-    <div className="page">
+    <div className="page" style={{ padding: '' }}>
       <header className="header">
         <h1>Countdown / Counter</h1>
-        <p className="subtitle">Stored in MongoDB via an Express API</p>
       </header>
-
       <main className="card">
         <div className="value" aria-live="polite">
           {value === null ? '—' : value}

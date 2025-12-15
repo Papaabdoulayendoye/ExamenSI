@@ -17,7 +17,6 @@ services:
       NODE_ENV: "development"
       CORS_ORIGIN: "http://localhost:5173"
       MONGODB_URI: "mongodb://mongo:27017/counter_app"
-      # Helps file watching on Windows bind mounts
       CHOKIDAR_USEPOLLING: "true"
     depends_on:
       - mongo
