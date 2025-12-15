@@ -48,6 +48,10 @@ Depuis la racine :
    - `npm.cmd install`
    - `npm.cmd run dev`
 
+## Sécurité (Trivy)
+- Un scan Trivy a été réalisé sur les images Docker et les rapports sont dans `reports/`.
+- Voir le fichier `SECURITY_REPORT.md`.
+
 ## Commentaires
 - Sur Windows/PowerShell, `npm` peut être bloqué (ExecutionPolicy). Utiliser `npm.cmd`.
 - En Docker : le frontend est servi par Nginx, et le backend tourne en non‑root.
