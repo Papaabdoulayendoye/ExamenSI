@@ -62,10 +62,10 @@ Depuis la racine :
    - `npm run dev`
 
 ## Sécurité (Scout + Docker Hub)
-- Un scan Trivy a été réalisé sur les images Docker ans
-  - `https://scout.docker.com/reports/org/papaabdoulaye/overview?stream=latest-indexed` (ExamenSI-web / Front)
+- Un scan Scout a été réalisé sur les images Docker sur le hub docker
+  - `https://ibb.co/350TSKg1` (ExamenSI-web / Front)
     - *Le niveau de gravité « moyen » indique une vulnérabilité dont l'impact potentiel est modéré si elle est exploitée.*   
-  - `https://scout.docker.com/vulnerabilities/id/CVE-2025-64756/my-images/org/papaabdoulaye?stream=latest-indexed` (ExamenSI-api / Back)
+  - `https://ibb.co/JF82sNv2` (ExamenSI-api / Back)
     -  *Avec le niveau de gravité « HIGH 7.5 (	CVE-2025-64756 )» Les pirates disposant d'un accès local ou d'un compte CI pourraient exploiter cette vulnérabilité pour exécuter des commandes arbitraires avec les privilèges de l'utilisateur actuel. Cela pourrait entraîner une compromission totale du système, notamment : - Accès non autorisé à des ressources système sensibles*
 
 ## Commentaires
