@@ -8,6 +8,7 @@ services:
       - "27017:27017"
 
   api:
+    image: papaabdoulaye/examensi-api:latest
     build:
       context: ./backend
     restart: unless-stopped
@@ -22,6 +23,7 @@ services:
       - "4000:4000"
 
   web:
+    image: papaabdoulaye/examensi-web:latest
     build:
       context: ./frontend
       args:
